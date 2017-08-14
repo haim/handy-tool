@@ -9,22 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandyToolTest", "HandyToolT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{29C9E91F-4BAF-4F0A-8066-1EE4A68CD4C3}"
 EndProject
-Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://jusbat.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = HandyTool\\HandyTool.csproj
-		SccProjectName1 = HandyTool
-		SccLocalPath1 = HandyTool
-		SccProjectUniqueName2 = HandyToolTest\\HandyToolTest.csproj
-		SccProjectName2 = HandyToolTest
-		SccLocalPath2 = HandyToolTest
-		SccProjectUniqueName3 = Common\\Common.csproj
-		SccProjectName3 = Common
-		SccLocalPath3 = Common
-	EndGlobalSection
+Global	
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

@@ -26,20 +26,24 @@ namespace HandyTool
         public Process eventViewerProcess = new Process();
 
         //set to true to hide cmd windows, false is useful for testing
-        public Boolean createNoProcessWindows = true;
+        public Boolean createNoProcessWindows = false;
 
-        public String pathToNotepad = "C:\\Windows\\Notepad.exe";
-        public String hostsFilepath = "C:\\Windows\\System32\\Drivers\\etc\\hosts";
+        public string pathToNotepad = "C:\\Windows\\Notepad.exe";
+        public string hostsFilepath = "C:\\Windows\\System32\\Drivers\\etc\\hosts";
+
+        string geckodriver = "geckodriver-0.18.0.exe";
+        string chromedriver = "chromedriver-2.31";
+        string iedriver = "IEDriverServer";
 
         public form()
         {
             InitializeComponent();
 
-            String seleniumServerPath = Common.Common.returnAssetsPath() + "selenium-server-2.53.0.jar";
+            string seleniumServerPath = Common.Common.returnAssetsPath() + "selenium-server-3.5.0.jar";
 
             #region HUB PROCESS
             //set properties for Hub process
-            String hubJarParameters = " -role hub -timeout 86400 -browserTimeout 86400";
+            string hubJarParameters = " -role hub -timeout 86400 -browserTimeout 86400";
             startHubProcess.StartInfo.FileName = "java";
             startHubProcess.StartInfo.Arguments = @"-jar " + seleniumServerPath + " " + hubJarParameters;
             Console.WriteLine(startHubProcess.StartInfo.Arguments);
@@ -50,22 +54,21 @@ namespace HandyTool
 
             #region NODE PROCESS
             //set properties for Node process
-            String chromeDriverPath = Common.Common.returnAssetsPath() + "chromedriver.exe";
-            String ieDriverPath = Common.Common.returnAssetsPath() + "IEDriverServer.exe";
-            String firefoxDriverPath = Common.Common.returnAssetsPath() + "geckodriver-0.11.1.exe";
-            String webDriverParameters = "-Dwebdriver.gecko.driver=" + firefoxDriverPath + " -Dwebdriver.chrome.driver=" + chromeDriverPath + " -Dwebdriver.ie.driver=" + ieDriverPath;
-            String nodeConfigPath = Common.Common.returnAssetsPath() + "nodeconfig.json";
-            String nodeConfigParameters = " -nodeConfig " + nodeConfigPath;
-            //TODO - fix this so it gets the IP properly
-            String ipAddress = Common.Common.GetLocalIPAddress();
+            string chromeDriverPath = Common.Common.returnAssetsPath() + chromedriver;
+            string ieDriverPath = Common.Common.returnAssetsPath() + iedriver;
+            string firefoxDriverPath = Common.Common.returnAssetsPath() + geckodriver;
+            string webDriverParameters = "-Dwebdriver.gecko.driver=" + firefoxDriverPath + " -Dwebdriver.chrome.driver=" + chromeDriverPath + " -Dwebdriver.ie.driver=" + ieDriverPath;
+            string nodeConfigPath = Common.Common.returnAssetsPath() + "nodeconfig.json";
+            string nodeConfigParameters = " -nodeConfig " + nodeConfigPath;            
+            string ipAddress = Common.Common.GetLocalIPAddress();
 
             //selenium 2 settings
-            String nodeJarParameters = " -role webdriver -hub http://" + ipAddress + ":4444 /grid/register -port 5556 -browser browserName=firefox,platform=WINDOWS -browser browserName=chrome,platform=WINDOWS -Dwebdriver.chrome.driver=" + chromeDriverPath + " -browser browserName=\"internet explorer\",platform=WINDOWS -Dwebdriver.ie.driver=" + ieDriverPath + " -timeout  86400";
-            startNodeProcess.StartInfo.Arguments = @"-jar " + seleniumServerPath + " " + nodeJarParameters;
+            //string nodeJarParameters = " -role webdriver -hub http://" + ipAddress + ":4444 /grid/register -port 5556 -browser browserName=firefox,platform=WINDOWS -browser browserName=chrome,platform=WINDOWS -Dwebdriver.chrome.driver=" + chromeDriverPath + " -browser browserName=\"internet explorer\",platform=WINDOWS -Dwebdriver.ie.driver=" + ieDriverPath + " -timeout  86400";
+            //startNodeProcess.StartInfo.Arguments = @"-jar " + seleniumServerPath + " " + nodeJarParameters;
             
             //selenium 3 settings
-            //String nodeJarParameters = " -role node"; 
-            //startNodeProcess.StartInfo.Arguments = @"" + webDriverParameters + " -jar " + seleniumServerPath + " " + nodeJarParameters + nodeConfigParameters;
+            string nodeJarParameters = " -role node"; 
+            startNodeProcess.StartInfo.Arguments = @"" + webDriverParameters + " -jar " + seleniumServerPath + " " + nodeJarParameters + nodeConfigParameters;
                                 
             Console.WriteLine(startNodeProcess.StartInfo.Arguments);
 
@@ -141,7 +144,7 @@ namespace HandyTool
         private void btnADBDevices_Click(object sender, EventArgs e)
         {
             adbDevicesProcess.Start();
-            String output = adbDevicesProcess.StandardOutput.ReadToEnd();
+            string output = adbDevicesProcess.StandardOutput.ReadToEnd();
             Console.WriteLine(output);            
             this.txtAdbDevices.Text = output;
         }
