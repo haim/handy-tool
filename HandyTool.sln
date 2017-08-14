@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandyTool", "HandyTool\HandyTool.csproj", "{3215EC76-BBE0-42EA-BEC8-5089494502EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandyToolTest", "HandyToolTest\HandyToolTest.csproj", "{A9E078E5-04FF-4252-A4BB-0D9F16083557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{29C9E91F-4BAF-4F0A-8066-1EE4A68CD4C3}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://jusbat.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = HandyTool\\HandyTool.csproj
+		SccProjectName1 = HandyTool
+		SccLocalPath1 = HandyTool
+		SccProjectUniqueName2 = HandyToolTest\\HandyToolTest.csproj
+		SccProjectName2 = HandyToolTest
+		SccLocalPath2 = HandyToolTest
+		SccProjectUniqueName3 = Common\\Common.csproj
+		SccProjectName3 = Common
+		SccLocalPath3 = Common
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3215EC76-BBE0-42EA-BEC8-5089494502EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3215EC76-BBE0-42EA-BEC8-5089494502EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3215EC76-BBE0-42EA-BEC8-5089494502EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3215EC76-BBE0-42EA-BEC8-5089494502EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9E078E5-04FF-4252-A4BB-0D9F16083557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9E078E5-04FF-4252-A4BB-0D9F16083557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9E078E5-04FF-4252-A4BB-0D9F16083557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9E078E5-04FF-4252-A4BB-0D9F16083557}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29C9E91F-4BAF-4F0A-8066-1EE4A68CD4C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29C9E91F-4BAF-4F0A-8066-1EE4A68CD4C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29C9E91F-4BAF-4F0A-8066-1EE4A68CD4C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29C9E91F-4BAF-4F0A-8066-1EE4A68CD4C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
