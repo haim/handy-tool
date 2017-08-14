@@ -26,7 +26,7 @@ namespace HandyTool
         public Process eventViewerProcess = new Process();
 
         //set to true to hide cmd windows, false is useful for testing
-        public Boolean createNoProcessWindows = false;
+        public Boolean createNoProcessWindows = true;
 
         public string pathToNotepad = "C:\\Windows\\Notepad.exe";
         public string hostsFilepath = "C:\\Windows\\System32\\Drivers\\etc\\hosts";
